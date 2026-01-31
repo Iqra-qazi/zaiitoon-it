@@ -1,0 +1,588 @@
+:root {
+    --primary-blue: #0066ff;
+    --highlight-yellow: #fff9c0;
+    /* Adjusted for that highlighter look */
+    --text-dark: #111827;
+    --text-grey: #6b7280;
+    --bg-light: #ffffff;
+    --font-main: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    background: #fff;
+    /* Ensure it's white */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.brand-icon {
+    background: #000;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    /* Center icon */
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.brand-text {
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-dark) !important;
+    font-size: 0.95rem;
+}
+
+.badge-price {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.btn-custom {
+    background-color: var(--primary-blue);
+    border: none;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-custom:hover {
+    background-color: #0052cc;
+    transform: translateY(-1px);
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 140px;
+    /* Space for fixed navbar */
+    padding-bottom: 80px;
+    position: relative;
+}
+
+.hero-title {
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    font-size: 3.5rem;
+}
+
+.highlight {
+    background-color: var(--highlight-yellow);
+    padding: 0 4px;
+    display: inline-block;
+    /* Better for highlighter effect */
+}
+
+.lead {
+    font-size: 1.15rem;
+    font-weight: 400;
+    max-width: 500px;
+}
+
+/* Form */
+.email-form {
+    max-width: 480px;
+}
+
+.form-control-lg {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+}
+
+.form-control-lg:focus {
+    box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.15);
+    border-color: var(--primary-blue);
+}
+
+.dot {
+    font-weight: 900;
+}
+
+/* Social Proof */
+.social-proof {
+    margin-top: 3rem;
+    border-top: 1px solid #f3f4f6;
+    /* Subtle divider if needed, or remove */
+    padding-top: 2rem;
+}
+
+.logos span,
+.logos i {
+    filter: grayscale(100%);
+    transition: opacity 0.3s;
+}
+
+.spacing-wide {
+    letter-spacing: 2px;
+}
+
+/* Graphic Elements */
+.cursor-mockup {
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.cursor-hand {
+    top: 20%;
+    left: 45%;
+}
+
+.cursor-pink {
+    bottom: 15%;
+    left: 10%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.cursor-label {
+    background: #ff00cc;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-left: -5px;
+    /* Overlap nicely */
+    margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cursor-arrow {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #ff00cc;
+    transform: rotate(-30deg);
+}
+
+/* Right Side Widget Mockup */
+.widget-mockup-wrapper {
+    position: relative;
+    padding-top: 40px;
+    /* Space for the floating header */
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.widget-pill-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+    z-index: 20;
+    white-space: nowrap;
+    min-width: 280px;
+}
+
+.widget-frame {
+    background: #fff;
+    border: 4px solid #fecb00;
+    /* Yellow Border */
+    border-radius: 0;
+    /* Square corners as per screenshot or slightly rounded? Screenshot looks sharp/square. */
+    padding: 15px;
+    /* Spacing inside yellow border */
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic-ring {
+    padding: 2px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.profile-img {
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+/* Custom Masonry Grid */
+.story-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    /* Left col wider */
+    grid-template-rows: 140px 140px;
+    gap: 12px;
+}
+
+.story-item {
+    border-radius: 8px;
+    /* Slight rounding on images */
+    overflow: hidden;
+    position: relative;
+}
+
+.item-large {
+    grid-row: 1 / 3;
+}
+
+.story-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.story-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.story-content:hover img {
+    transform: scale(1.05);
+}
+
+/* Overlays */
+.story-overlay-text {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    padding: 10px;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
+}
+
+.center-text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.cardCiol {
+    background-color: #EEF1F7;
+    ;
+}
+
+.small-icon-bg {
+    background: #000;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.insta-float-icon {
+    position: absolute;
+    bottom: 20px;
+    /* Inside the frame now? Or floating out? Screenshot shows it overlapping border? */
+    left: -25px;
+    /* Stick out to left */
+    background: #fff;
+    /* White bg */
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 25;
+}
+
+.insta-float-icon i {
+    background: -webkit-linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-section {
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .email-form {
+        margin: 0 auto;
+    }
+
+    .logos {
+        justify-content: center;
+    }
+
+    .cursor-mockup {
+        display: none;
+    }
+
+    .widget-mockup-wrapper {
+        margin-top: 4rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .insta-float-icon {
+        left: -10px;
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+}
+
+/* Widgets Section Styles */
+.browser-mockup {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.browser-header {
+    background: #111827;
+    /* Dark header like screenshot */
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+}
+
+.browser-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+}
+
+.dot.red {
+    background: #ff5f56;
+}
+
+.dot.yellow {
+    background: #ffbd2e;
+}
+
+.dot.green {
+    background: #27c93f;
+}
+
+.mockup-content {
+    min-height: 400px;
+    position: relative;
+    /* Image is set inline in HTML */
+}
+
+.overlay-white {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    max-width: 300px;
+    margin: 0 auto;
+    backdrop-filter: blur(5px);
+}
+
+.m-story {
+    width: 100px;
+    height: 140px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.yellow {
+    background: #F9ED32;
+
+}
+
+.widget-list-item {
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.widget-list-item:hover {
+    color: var(--primary-blue) !important;
+}
+
+.widget-list-item.active {
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+}
+
+/* Features Section Styles */
+.insta-gradient-text {
+    background: -webkit-linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f3f4f6;
+}
+
+
+/* Integrations Section */
+.integration-box {
+    background-color: #f3f6f9;
+    /* Light grey/blueish bg from screenshot */
+}
+
+.integration-center-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-blue);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
+}
+
+.integration-ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: rgba(0, 102, 255, 0.05);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.integration-ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 102, 255, 0.02);
+    border-radius: 50%;
+}
+
+.platform-logo {
+    transition: transform 0.2s;
+    cursor: default;
+    border: 1px solid #e5e7eb;
+}
+
+.platform-logo:hover {
+    transform: translateX(5px);
+}
+
+.connecting-lines {
+    position: absolute;
+    top: 50%;
+    left: 17%;
+    /* Adjust to start from near center icon */
+    transform: translateY(-50%);
+    width: 60%;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.connecting-lines span {
+    height: 1px;
+    width: 100%;
+    border-top: 2px dashed #d1d5db;
+    /* Dotted lines */
+    opacity: 0.4;
+    position: relative;
+}
+
+/* Adjust line angles/positions to point to logos roughly */
+.connecting-lines span:nth-child(1) {
+    transform: rotate(-15deg);
+    width: 100%;
+    transform-origin: left;
+}
+
+.connecting-lines span:nth-child(2) {
+    transform: rotate(-8deg);
+    width: 95%;
+    transform-origin: left;
+}
+
+.connecting-lines span:nth-child(3) {
+    transform: rotate(0deg);
+    width: 90%;
+    transform-origin: left;
+}
+
+.connecting-lines span:nth-child(4) {
+    transform: rotate(0deg);
+    width: 90%;
+    transform-origin: left;
+}
+
+.connecting-lines span:nth-child(5) {
+    transform: rotate(8deg);
+    width: 95%;
+    transform-origin: left;
+}
+
+.connecting-lines span:nth-child(6) {
+    transform: rotate(15deg);
+    width: 100%;
+    transform-origin: left;
+}
+
+@media (max-width: 991px) {
+    .integration-box {
+        text-align: center;
+    }
+
+    .col-lg-5 {
+        margin-bottom: 2rem;
+    }
+}
